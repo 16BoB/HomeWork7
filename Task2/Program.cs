@@ -47,7 +47,7 @@ Console.Write("Enter the column number of the number you are looking for: ");
 int j = Convert.ToInt32(Console.ReadLine());
 
 if (i > myArr.GetLength(0) || j > myArr.GetLength(1)) {
-    Console.WriteLine("Числа под такой позицией не существует");
+    Console.WriteLine("There is no number under this position");
 }
 else {
     Console.WriteLine(myArr[i - 1,j - 1]);
