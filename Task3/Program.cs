@@ -32,13 +32,13 @@ void ShowArray (double[] arr) {
 }
 
 double[] CalculateAverageOnRows (int[,] arr) {
-    double[] averageArr = new double[arr.GetLength(0)];
+    double[] averageArr = new double[arr.GetLength(1)];
     double sum = 0;
-    for (int i = 0; i < arr.GetLength(0); i++) {
-        for (int j = 0; j < arr.GetLength(1); j++) {
-            sum = arr[i,j] + sum;
+    for (int i = 0; i < arr.GetLength(1); i++) {
+        for (int j = 0; j < arr.GetLength(0); j++) {
+            sum = arr[j,i] + sum;
         }
-        Math.Round(sum /= arr.GetLength(1));
+        sum /= arr.GetLength(0);
         averageArr[i] = sum;
         sum = 0;
     }
@@ -64,5 +64,5 @@ Console.WriteLine();
 
 double[] averageArr =  CalculateAverageOnRows(myArr);
 
-Console.WriteLine("Average number for each row of a two-dimensional array:");
+Console.WriteLine("Average number for each column of a two-dimensional array:");
 ShowArray(averageArr);
